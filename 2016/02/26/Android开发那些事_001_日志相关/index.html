@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="android, android blog" />
+  <meta name="keywords" content="android,logback_android,slf4j," />
 
 
 
@@ -57,15 +57,28 @@
 
 
 
-<meta name="description" content="a android blog write by kingrukawa,android develop tips,android develop blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="kingrukawa's blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="版权声明：本文为博主原创文章，未经博主允许不得转载。
+
+卷首近期金老师比较火，小丫头片子也比较火，所以想用这个名字开始我的博客，接下来写的一些东西主要是针对于android开发中的公共组件的应用和一些问题，会从日志、crash上报、数据分析、网络请求、图片请求、存储相关、等方面来一起研究一下在android开发中我们所需要的公共组件使用时遇到的一些问题的思考
+走起
+日志相关android开发中免不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安卓开发那些事_001_日志相关">
+<meta property="og:url" content="http://yoursite.com/2016/02/26/Android开发那些事_001_日志相关/index.html">
 <meta property="og:site_name" content="kingrukawa's blog">
-<meta property="og:description" content="a android blog write by kingrukawa,android develop tips,android develop blog">
+<meta property="og:description" content="版权声明：本文为博主原创文章，未经博主允许不得转载。
+
+卷首近期金老师比较火，小丫头片子也比较火，所以想用这个名字开始我的博客，接下来写的一些东西主要是针对于android开发中的公共组件的应用和一些问题，会从日志、crash上报、数据分析、网络请求、图片请求、存储相关、等方面来一起研究一下在android开发中我们所需要的公共组件使用时遇到的一些问题的思考
+走起
+日志相关android开发中免不">
+<meta property="og:updated_time" content="2016-03-01T09:27:54.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kingrukawa's blog">
-<meta name="twitter:description" content="a android blog write by kingrukawa,android develop tips,android develop blog">
+<meta name="twitter:title" content="安卓开发那些事_001_日志相关">
+<meta name="twitter:description" content="版权声明：本文为博主原创文章，未经博主允许不得转载。
+
+卷首近期金老师比较火，小丫头片子也比较火，所以想用这个名字开始我的博客，接下来写的一些东西主要是针对于android开发中的公共组件的应用和一些问题，会从日志、crash上报、数据分析、网络请求、图片请求、存储相关、等方面来一起研究一下在android开发中我们所需要的公共组件使用时遇到的一些问题的思考
+走起
+日志相关android开发中免不">
 
 
 
@@ -83,7 +96,7 @@
   };
 </script>
 
-  <title> kingrukawa's blog </title>
+  <title> 安卓开发那些事_001_日志相关 | kingrukawa's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -102,9 +115,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -203,15 +214,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
 
+  <div id="posts" class="posts-expand">
     
-
-    
-    
-
-    
-      
 
   
   
@@ -231,141 +236,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/02/29/Android开发那些事_002_crash report/" itemprop="url">
-                  安卓开发那些事_002_crash report
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-29T11:23:14+08:00" content="2016-02-29">
-              2016-02-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/安卓开发那些事/" itemprop="url" rel="index">
-                    <span itemprop="name">安卓开发那些事</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/29/Android开发那些事_002_crash report/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/29/Android开发那些事_002_crash report/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
-</blockquote>
-<p>android开发中的crash信息收集必不可少，这样有利于改善app的用户体验至关重要，接下来咱们聊一聊crash那些事</p>
-<h3 id="收集crash信息"><a href="#收集crash信息" class="headerlink" title="收集crash信息"></a>收集crash信息</h3><p>主要方法：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thread.<span class="function"><span class="title">setDefaultUncaughtExceptionHandler</span><span class="params">(MyHandler)</span></span></span><br></pre></td></tr></table></figure></p>
-<p>在MainApplication中初始化：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">DfApplication</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">Application</span>&#123;</span></span><br><span class="line">  <span class="type">Thread</span>.<span class="type">UncaughtExceptionHandler</span> mDefaultHandler;</span><br><span class="line">  public void onCreate()&#123;</span><br><span class="line">    <span class="keyword">super</span>.onCreate();</span><br><span class="line">    mDefaultHandler = <span class="type">Thread</span>.getDefaultUncaughtExceptionHandler();</span><br><span class="line">    <span class="type">Thread</span>.setDefaultUncaughtExceptionHandler(<span class="keyword">new</span> <span class="type">MyHandler</span>(<span class="keyword">this</span>.getApplicationContext()));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在自己的MyHandler中实现UncaughtExceptionHandler中的方法你就可以处理crash信息了，当然，这种方法着实有些简陋，下面讨论稍微高大上的方法：ACRA</p>
-<h3 id="ACRA"><a href="#ACRA" class="headerlink" title="ACRA"></a>ACRA</h3><p>ACRA（application crash report for android)，是google的一个开源项目，引入它的包，可以将crash log发送到自己的google文档，官方文档有详细说明。<a href="http://code.google.com/p/acra/" target="_blank" rel="external">http://code.google.com/p/acra/</a></p>
-<p>该库已经对crash的上报信息进行了整合，包括手机的一些基本信息，使用上也可以高度定制自己需要的一些字段，上报的地址，也可以实现ReportSender方法来定制report方法，包括发送邮件、http到server、googleform。当然你也可以自定义到文件。具体实现谷哥度娘一大堆，这里不贴了。</p>
-<p>说明一点，log和crash如果存在手机的文件中，要考虑一下上报到服务器的时间和手机状态（网络、电量等）</p>
-<h3 id="Bugly"><a href="#Bugly" class="headerlink" title="Bugly"></a>Bugly</h3><p>国内较出名的crash report工具，企鹅出品，但貌似用的多的还是自家的app…</p>
-<p>bugly涵盖了java层的crash收集、ANR的收集、native层的crash收集、30kb的Log缓存上报以及crash数据分析等功能，具体可到官网查看。功能还是比较强大的，对于有native开发的app来说还是有用处的，但用处多少，这里不好说，因为自身开发native的话一定会有一套自己的检测机制。</p>
-<p>bugly的AS集成在开发者使用手册中写的已经很详尽了，贴一下地址：<a href="http://bugly.qq.com/androidfast" target="_blank" rel="external">http://bugly.qq.com/androidfast</a></p>
-<h3 id="Android-Crash-Report那些事"><a href="#Android-Crash-Report那些事" class="headerlink" title="Android Crash Report那些事"></a>Android Crash Report那些事</h3><p>在开发中，会遇到crash问题，一般来说，crash发生在java层，但是，有时候会发生在其他层面上。大致，Android Crash 大致有三类：</p>
-<ul>
-<li>Java uncatch exception</li>
-<li>ANR crash</li>
-<li>Native crash</li>
-</ul>
-<p>本文主要针对Java uncatch exception来表，ANR在开发中还是比较容易避免的，Native Crash如果有兴趣的朋友可以自行在深入研究一下</p>
-<p>这里希望各位coder，在Android开发中可以根据需求选择合适的方法来进行Crash的收集</p>
-<p>cheers</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/26/Android开发那些事_001_日志相关/" itemprop="url">
-                  安卓开发那些事_001_日志相关
-                </a>
+                安卓开发那些事_001_日志相关
               
             
           </h1>
@@ -429,9 +300,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
 </blockquote>
 <h3 id="卷首"><a href="#卷首" class="headerlink" title="卷首"></a>卷首</h3><p>近期金老师比较火，小丫头片子也比较火，所以想用这个名字开始我的博客，接下来写的一些东西主要是针对于android开发中的公共组件的应用和一些问题，会从日志、crash上报、数据分析、网络请求、图片请求、存储相关、等方面来一起研究一下在android开发中我们所需要的公共组件使用时遇到的一些问题的思考</p>
@@ -449,29 +318,49 @@
 <p>-dontwarn ch.qos.logback.core.net.*</p>
 <h3 id="日志那些事"><a href="#日志那些事" class="headerlink" title="日志那些事"></a>日志那些事</h3><p>这里我并没有贴我自己的代码，因为我只是对开源组件的再次封装，使其更适合自己的工程。当然，日志组件是整个工程的较高优先级配置项，你未开始其他模块开发之前就要配置封装的，日志后必然要联系到crash的信息收集，下篇在说说crash report那些事</p>
 
-          
-        
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag">#android</a>
+          
+            <a href="/tags/logback-android/" rel="tag">#logback_android</a>
+          
+            <a href="/tags/slf4j/" rel="tag">#slf4j</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/29/Android开发那些事_002_crash report/" rel="prev" title="安卓开发那些事_002_crash report">
+                安卓开发那些事_002_crash report <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
 
-  </section>
-
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -479,6 +368,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/26/Android开发那些事_001_日志相关/"
+           data-title="安卓开发那些事_001_日志相关" data-url="http://yoursite.com/2016/02/26/Android开发那些事_001_日志相关/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -498,8 +395,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head.png"
@@ -560,6 +466,23 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#卷首"><span class="nav-number">1.</span> <span class="nav-text">卷首</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志相关"><span class="nav-number">2.</span> <span class="nav-text">日志相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slf4j-logback-优势"><span class="nav-number">3.</span> <span class="nav-text">slf4j + logback 优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logback配置"><span class="nav-number">4.</span> <span class="nav-text">logback配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ProGuard相关"><span class="nav-number">5.</span> <span class="nav-text">ProGuard相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志那些事"><span class="nav-number">6.</span> <span class="nav-text">日志那些事</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -634,6 +557,167 @@
   
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
