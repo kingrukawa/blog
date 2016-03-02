@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="android 数据分析 数据统计,android数据统计," />
+  <meta name="keywords" content="android 数据存储,secure preference,加密perference," />
 
 
 
@@ -59,50 +59,23 @@
 
 <meta name="description" content="版权声明：本文为博主原创文章，未经博主允许不得转载。
 
-android发布后会对app的应用使用情况，页面的跌势率、转化率等数据进行一些统计分析。这里不做过多的篇幅介绍，因为这是因人而异的选择问题，这里只提供一些选择吧，当然也不全面，如果有针对的选择还需要个人做一些甄别筛选
-Android数据统计工具国内的推荐
-
-友盟
-百度
-其他（请自行筛选）
-
-国外的推荐
-
-GoogleAnalytics
-其他">
+android开发中离不开数据的持久化，存在服务器端、写到文件、sharedpreference、sqlite是android处理数据存储的几种常见方式，下面介绍一下sharedpreference。sqlite存储将在下篇介绍
+android机器root的简单便捷使得android在存储数据时难免的为之担心，而存在服务器有时并不方便，所以一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安卓开发那些事_003_数据分析">
-<meta property="og:url" content="http://yoursite.com/2016/03/01/安卓开发那些事-003-数据分析/index.html">
+<meta property="og:title" content="安卓开发那些事_004_数据存储之SharedPreference">
+<meta property="og:url" content="http://yoursite.com/2016/03/02/安卓开发那些事-004-数据存储/index.html">
 <meta property="og:site_name" content="kingrukawa's blog">
 <meta property="og:description" content="版权声明：本文为博主原创文章，未经博主允许不得转载。
 
-android发布后会对app的应用使用情况，页面的跌势率、转化率等数据进行一些统计分析。这里不做过多的篇幅介绍，因为这是因人而异的选择问题，这里只提供一些选择吧，当然也不全面，如果有针对的选择还需要个人做一些甄别筛选
-Android数据统计工具国内的推荐
-
-友盟
-百度
-其他（请自行筛选）
-
-国外的推荐
-
-GoogleAnalytics
-其他">
-<meta property="og:updated_time" content="2016-03-01T15:31:32.699Z">
+android开发中离不开数据的持久化，存在服务器端、写到文件、sharedpreference、sqlite是android处理数据存储的几种常见方式，下面介绍一下sharedpreference。sqlite存储将在下篇介绍
+android机器root的简单便捷使得android在存储数据时难免的为之担心，而存在服务器有时并不方便，所以一">
+<meta property="og:updated_time" content="2016-03-02T15:55:14.362Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安卓开发那些事_003_数据分析">
+<meta name="twitter:title" content="安卓开发那些事_004_数据存储之SharedPreference">
 <meta name="twitter:description" content="版权声明：本文为博主原创文章，未经博主允许不得转载。
 
-android发布后会对app的应用使用情况，页面的跌势率、转化率等数据进行一些统计分析。这里不做过多的篇幅介绍，因为这是因人而异的选择问题，这里只提供一些选择吧，当然也不全面，如果有针对的选择还需要个人做一些甄别筛选
-Android数据统计工具国内的推荐
-
-友盟
-百度
-其他（请自行筛选）
-
-国外的推荐
-
-GoogleAnalytics
-其他">
+android开发中离不开数据的持久化，存在服务器端、写到文件、sharedpreference、sqlite是android处理数据存储的几种常见方式，下面介绍一下sharedpreference。sqlite存储将在下篇介绍
+android机器root的简单便捷使得android在存储数据时难免的为之担心，而存在服务器有时并不方便，所以一">
 
 
 
@@ -120,7 +93,7 @@ GoogleAnalytics
   };
 </script>
 
-  <title> 安卓开发那些事_003_数据分析 | kingrukawa's blog </title>
+  <title> 安卓开发那些事_004_数据存储之SharedPreference | kingrukawa's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +233,7 @@ GoogleAnalytics
             
             
               
-                安卓开发那些事_003_数据分析
+                安卓开发那些事_004_数据存储之SharedPreference
               
             
           </h1>
@@ -272,8 +245,8 @@ GoogleAnalytics
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-01T23:18:10+08:00" content="2016-03-01">
-              2016-03-01
+            <time itemprop="dateCreated" datetime="2016-03-02T21:36:38+08:00" content="2016-03-02">
+              2016-03-02
             </time>
           </span>
 
@@ -302,8 +275,8 @@ GoogleAnalytics
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/01/安卓开发那些事-003-数据分析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/01/安卓开发那些事-003-数据分析/" itemprop="commentsCount"></span>
+                <a href="/2016/03/02/安卓开发那些事-004-数据存储/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/安卓开发那些事-004-数据存储/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -327,20 +300,15 @@ GoogleAnalytics
         <blockquote>
 <p>版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
 </blockquote>
-<p>android发布后会对app的应用使用情况，页面的跌势率、转化率等数据进行一些统计分析。这里不做过多的篇幅介绍，因为这是因人而异的选择问题，这里只提供一些选择吧，当然也不全面，如果有针对的选择还需要个人做一些甄别筛选</p>
-<h3 id="Android数据统计工具"><a href="#Android数据统计工具" class="headerlink" title="Android数据统计工具"></a>Android数据统计工具</h3><p>国内的推荐</p>
-<ul>
-<li>友盟</li>
-<li>百度</li>
-<li>其他（请自行筛选）</li>
-</ul>
-<p>国外的推荐</p>
-<ul>
-<li>GoogleAnalytics</li>
-<li>其他（请自行筛选）</li>
-</ul>
-<p>自从我开始android开发之日起友盟也就存在了，相信应该可以满足一般的需求了吧</p>
-<p>下一篇聊聊android开发中的数据存储相关</p>
+<p>android开发中离不开数据的持久化，存在服务器端、写到文件、sharedpreference、sqlite是android处理数据存储的几种常见方式，下面介绍一下sharedpreference。sqlite存储将在下篇介绍</p>
+<p>android机器root的简单便捷使得android在存储数据时难免的为之担心，而存在服务器有时并不方便，所以一些加密的数据存储方法应运而生</p>
+<h3 id="secure-preference"><a href="#secure-preference" class="headerlink" title="secure preference"></a>secure preference</h3><p>preference存储的是键值对形式的.xml文件，如果root了机器，这个文件存储的数据就是明文存在的了，为了避免这个情况发生，我们只能从存入的键和值入手解决问题</p>
+<p>下面贴两个github的开源项目</p>
+<p><a href="https://github.com/scottyab/secure-preferences" target="_blank" rel="external">https://github.com/scottyab/secure-preferences</a></p>
+<p><a href="https://github.com/ophio/secure-preferences" target="_blank" rel="external">https://github.com/ophio/secure-preferences</a></p>
+<p>这两个是github上面排名暂时第一第二的两个项目，比较一下两者中的核心代码都是用的android自带的对称加密算法对键值对加密，一个AES一个DES的加密，再有不同的地方就是对自定义的sharedpreference的封装方法</p>
+<p>如果对安全要求在高一些，加密可以放到native之中来做</p>
+<p>加密这里不做过多的介绍，大家可以参考上面的源码来定制自己的一个secure_preference，相信会比上面两个要好很多，使用起来也并不麻烦</p>
 <p>cheers</p>
 
       
@@ -350,9 +318,11 @@ GoogleAnalytics
       
         <div class="post-tags">
           
-            <a href="/tags/android-数据分析-数据统计/" rel="tag">#android 数据分析 数据统计</a>
+            <a href="/tags/android-数据存储/" rel="tag">#android 数据存储</a>
           
-            <a href="/tags/android数据统计/" rel="tag">#android数据统计</a>
+            <a href="/tags/secure-preference/" rel="tag">#secure preference</a>
+          
+            <a href="/tags/加密perference/" rel="tag">#加密perference</a>
           
         </div>
       
@@ -361,17 +331,13 @@ GoogleAnalytics
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/29/Android开发那些事_002_crash report/" rel="next" title="安卓开发那些事_002_crash report">
-                <i class="fa fa-chevron-left"></i> 安卓开发那些事_002_crash report
+              <a href="/2016/03/01/安卓开发那些事-003-数据分析/" rel="next" title="安卓开发那些事_003_数据分析">
+                <i class="fa fa-chevron-left"></i> 安卓开发那些事_003_数据分析
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/02/安卓开发那些事-004-数据存储/" rel="prev" title="安卓开发那些事_004_数据存储之SharedPreference">
-                安卓开发那些事_004_数据存储之SharedPreference <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -397,8 +363,8 @@ GoogleAnalytics
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/01/安卓开发那些事-003-数据分析/"
-           data-title="安卓开发那些事_003_数据分析" data-url="http://yoursite.com/2016/03/01/安卓开发那些事-003-数据分析/">
+      <div class="ds-thread" data-thread-key="2016/03/02/安卓开发那些事-004-数据存储/"
+           data-title="安卓开发那些事_004_数据存储之SharedPreference" data-url="http://yoursite.com/2016/03/02/安卓开发那些事-004-数据存储/">
       </div>
     
   </div>
@@ -503,7 +469,7 @@ GoogleAnalytics
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android数据统计工具"><span class="nav-number">1.</span> <span class="nav-text">Android数据统计工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#secure-preference"><span class="nav-number">1.</span> <span class="nav-text">secure preference</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
