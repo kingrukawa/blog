@@ -232,7 +232,134 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/02/安卓开发那些事-004-数据存储/" itemprop="url">
+                <a class="post-title-link" href="/2016/03/04/安卓开发那些事-004-数据存储之SQLite/" itemprop="url">
+                  安卓开发那些事_004_数据存储之SQLite
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-04T16:15:42+08:00" content="2016-03-04">
+              2016-03-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/安卓开发那些事/" itemprop="url" rel="index">
+                    <span itemprop="name">安卓开发那些事</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/04/安卓开发那些事-004-数据存储之SQLite/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/04/安卓开发那些事-004-数据存储之SQLite/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+</blockquote>
+<p>SQLite的属性特点注定了他非常适合运用在移动端，在android开发中如果有需求用到数据库时自己本就可以实现了，API都是现成的。但是碰到数据量非常庞大的时候就必须考虑数据库的相关优化问题。读取写入时间，性能等等。如果数据是一些必须要保证不被第三方恶意获取的话还要考虑到数据库的加密问题。接下来就说说一些开源的数据库框架，以及数据库加密相关</p>
+<h3 id="Android开源ORM（对象关系数据映射）"><a href="#Android开源ORM（对象关系数据映射）" class="headerlink" title="Android开源ORM（对象关系数据映射）"></a>Android开源ORM（对象关系数据映射）</h3><p>你优化SQLite的功力可能不是很强，但是有大牛的肩膀可以依靠，github上开源的orm框架其实非常多，第一的肯定是greendao。顶顶大名，如雷贯耳，包括他的eventbus，笔者只有膜拜的份</p>
+<p>网上也有一些对greendao与其他orm框架的实际测试对比，greendao也是独占鳌头，赢得不要不要的，有兴趣的朋友可以去看看</p>
+<p>贴下地址：<a href="https://github.com/greenrobot/greenDAO" target="_blank" rel="external">https://github.com/greenrobot/greenDAO</a></p>
+<p>上面介绍的很详尽，用法什么的这里不讲了，框架中有一个generator的java工程为了生存javabean和DaoMaster类，并未使用annotation方式，也是为了性能，不过我个人感觉如果在完美一点可以推出一个android studio的插件自动生存工具，这就完美了</p>
+<p>对于SQLite优化中，使用sql语句速度会快一些，善用session提高性能等这些都可以在源码中看到，学习优化数据库的童鞋，这个工程也是一个学习的途径</p>
+<p>使用过程中遇到一点不爽的地方就是如果你需要在添加一张表，你必须要用generator的java工程再次生成一遍，倒也不是慢，也不是很麻烦，总感觉会有更好的方法来避免这个问题，对于我这种懒人还是有点矫情</p>
+<h3 id="Android中SQLite加密"><a href="#Android中SQLite加密" class="headerlink" title="Android中SQLite加密"></a>Android中SQLite加密</h3><p>还是一个github工程，叫做SQLCipher，地址：<br><a href="https://github.com/sqlcipher/android-database-sqlcipher" target="_blank" rel="external">https://github.com/sqlcipher/android-database-sqlcipher</a></p>
+<p>感觉我真的是github的搬运工…有辣么句话，我们不生产代码，我们只是github的搬运工…</p>
+<p>SQLite本身是有加密接口的，只是android没有封装api，当然我指的是加密数据库，不是对数据加密存储。你自己也可以去实现接口然后build一个加密的数据库出来，花个一周时间应该可以接受，当然你也可以运用我给你推荐的这个库，先用用，不满意的地方自己在完善一下，而且人家还支持数据加密，完美了，也是一周时间…</p>
+<p>这个工程有一个非常好的地方，就是保留了所有android的自身API，如果你要替换一个数据库，直接将包换一下，在onCreat初始化一下SQLCipher就OK了，这也使得你可以拥有一个快速、高效、并且加密的SQLite了</p>
+<p>how to？</p>
+<h3 id="快速高效的加密SQLite"><a href="#快速高效的加密SQLite" class="headerlink" title="快速高效的加密SQLite"></a>快速高效的加密SQLite</h3><p>以上说过了，SQLCipher的API和android的一致，而非常开心greendao中用到的数据库就是android的api，这就意味着，你可以使二者结合使用，不过你需要将greendao的源码改一下在使用了，替换包名，搞定</p>
+<p>稍后时间我会附上我的实现过程，comming soon</p>
+<h3 id="思想汇报"><a href="#思想汇报" class="headerlink" title="思想汇报"></a>思想汇报</h3><p>关于这些知名的开源库的介绍和一些使用方法在网上已经有很多了，有些也是我的学习指导，也是开源精神使得后继的开发人员有迹可循，指引前行</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/02/安卓开发那些事-004-数据存储之sharedpreference/" itemprop="url">
                   安卓开发那些事_004_数据存储之SharedPreference
                 </a>
               
@@ -276,8 +403,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/02/安卓开发那些事-004-数据存储/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/安卓开发那些事-004-数据存储/" itemprop="commentsCount"></span>
+                <a href="/2016/03/02/安卓开发那些事-004-数据存储之sharedpreference/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/安卓开发那些事-004-数据存储之sharedpreference/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -759,7 +886,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -776,7 +903,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
